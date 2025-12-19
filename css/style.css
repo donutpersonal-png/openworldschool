@@ -63,8 +63,8 @@ ul {
   text-decoration: none;
   color: #1f3a5f;          
   font-weight: bold;
-  font-size: 1rem;         /* match buttons */
-  padding: 0.5rem 1rem;    /* same as buttons */
+  font-size: 1rem;         
+  padding: 0.5rem 1rem;    
   border: 2px solid #000;  
   border-radius: 6px;      
   line-height: 1.5;        
@@ -84,17 +84,35 @@ ul {
 }
 
 /* ======================
-   Header buttons
+   Header buttons (language & dark mode)
 ====================== */
 #darkModeToggle,
 #langToggle {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;       
   border-radius: 6px;
-  border: none;
-  background: #D6B98C;
+  border: 2px solid #000;     
+  background: #D6B98C;        
   color: #fff;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1rem;            
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Interactive states: hover, focus, active */
+#darkModeToggle:hover,
+#darkModeToggle:focus,
+#darkModeToggle:active,
+#langToggle:hover,
+#langToggle:focus,
+#langToggle:active {
+  background-color: #D6B98C;  
+  color: #fff;                
+  border-color: #000;         
 }
 
 /* ======================
@@ -138,7 +156,7 @@ form input, form textarea {
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #d1d5db;
-  color: #1E1E1E; /* Input text color */
+  color: #1E1E1E; 
 }
 
 form button.button {
@@ -218,6 +236,7 @@ body.manual-dark,
     border-color: #000;
   }
 }
+
 
 
 
