@@ -3,7 +3,6 @@ const toggle = document.getElementById('darkModeToggle');
 toggle.addEventListener('click', () => {
   document.body.classList.toggle('manual-dark');
 
-  // Save preference
   if (document.body.classList.contains('manual-dark')) {
     localStorage.setItem('darkMode', 'enabled');
   } else {
@@ -15,4 +14,5 @@ toggle.addEventListener('click', () => {
 if (localStorage.getItem('darkMode') === 'enabled') {
   document.body.classList.add('manual-dark');
 }
+
 
