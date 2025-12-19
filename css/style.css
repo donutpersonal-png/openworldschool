@@ -17,7 +17,6 @@ body {
 }
 
 a {
-  color: #1f3a5f;
   text-decoration: none;
 }
 
@@ -50,7 +49,7 @@ ul {
 
 /* Logo */
 #logo {
-  height: 60px;
+  height: 60px; /* slightly bigger */
   width: auto;
   display: block;
 }
@@ -66,12 +65,13 @@ ul {
 
 .header-nav ul li a {
   text-decoration: none;
-  color: #1f3a5f;
+  color: #D6B98C;      /* match buttons */
   font-weight: bold;
+  font-size: 1rem;     /* slightly bigger */
 }
 
 .header-nav ul li a:hover {
-  color: #007BFF;
+  color: #BFA473;      /* hover effect */
 }
 
 /* Buttons: Dark Mode and Language Toggle */
@@ -81,16 +81,18 @@ ul {
   border-radius: 6px;
   border: none;
   background: #D6B98C;
-  color: #fff;
+  color: #1F3A3D;      /* dark text for contrast */
   cursor: pointer;
   margin-left: 8px;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 /* ======================
    Manual Dark Mode
 ====================== */
 body.manual-dark {
-  background-color: #1F3A3D; /* new dark mode background */
+  background-color: #1F3A3D; /* dark mode background */
   color: #f5f5f5;
 }
 
@@ -100,7 +102,7 @@ body.manual-dark .site-header {
 }
 
 body.manual-dark .header-nav ul li a {
-  color: #F0EDE5;
+  color: #D6B98C; /* keep gold/tan in dark mode */
 }
 
 body.manual-dark #darkModeToggle,
@@ -187,4 +189,5 @@ footer {
     margin-top: 5px;
   }
 }
+
 
