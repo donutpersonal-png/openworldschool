@@ -10,9 +10,9 @@ collections:
     label: "Updates"
     folder: "content/updates"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Language", name: "lang", widget: "select", options: ["en", "ru"] }
+      - { label: "Language", name: "lang", widget: "select", options: ["en","ru"] }
       - { label: "Body", name: "body", widget: "markdown" }
 
