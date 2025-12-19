@@ -3,7 +3,7 @@
 ====================== */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-  color: #1a1a1a;
+  color: #1E1E1E; /* Main text color */
   background-color: #FAFAF8;
   margin: 0;
   line-height: 1.6;
@@ -16,11 +16,12 @@ body {
   padding: 1.5rem;
 }
 
+/* Links general */
 a {
-  color: #1f3a5f;
   text-decoration: none;
 }
 
+/* Lists for layout */
 ul {
   list-style: none;
   display: flex;
@@ -37,90 +38,106 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  background-color: #FAFAF8;
+  height: 70px;              
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  background-color: #FAFAF8;
   box-sizing: border-box;
   z-index: 1000;
   border-bottom: 1px solid #e5e7eb;
 }
 
+/* Logo */
 #logo {
-  max-height: 8vh;
-  max-width: 30vw;
-  height: auto;
+  height: 50px;
   width: auto;
-}
-
-@media (max-width: 600px) {
-  #logo {
-    max-height: 40px;
-  }
-
-  .header-nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
+  display: block;
 }
 
 /* ======================
-   Navigation
+   Navigation menu
 ====================== */
 .header-nav ul li a {
   text-decoration: none;
-  color: #1f3a5f;
+  color: #1f3a5f;          
   font-weight: bold;
-  padding: 0.5rem 1rem;
-  border: 2px solid #000000;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  font-size: 1rem;         
+  padding: 0.5rem 1rem;    
+  border: 2px solid #000;  
+  border-radius: 6px;      
+  line-height: 1.5;        
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background-color: #FAFAF8; /* match header background */
 }
 
-.header-nav ul li a:hover {
-  background-color: #D6B98C;
-  color: #fff;
-  border-color: #D6B98C;
+/* Interactive states: hover, focus, active */
+.header-nav ul li a:hover,
+.header-nav ul li a:focus,
+.header-nav ul li a:active {
+  color: #fff;             
+  background-color: #D6B98C; 
+  border-color: #000;      
+  transform: translateY(1px); /* subtle press effect */
 }
 
 /* ======================
-   Header Buttons
+   Header buttons (language & dark mode)
 ====================== */
-.header-buttons button {
+#darkModeToggle,
+#langToggle {
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  border: 2px solid #000000;
-  background-color: #D6B98C;
-  color: #1E1E1E;
-  font-weight: bold;
+  border: 2px solid #000;
+  background: #FAFAF8; /* same as menu default */
+  color: #1f3a5f;      /* same as menu default */
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease; /* smooth hover/press */
   margin-left: 0.5rem;
 }
 
-.header-buttons button:hover {
-  background-color: #1F3A3D;
+/* Hover/focus/active: match menu behavior */
+#darkModeToggle:hover,
+#darkModeToggle:focus,
+#darkModeToggle:active,
+#langToggle:hover,
+#langToggle:focus,
+#langToggle:active {
+  background-color: #D6B98C;
   color: #fff;
-  border-color: #1F3A3D;
+  border-color: #000;
+  transform: translateY(1px);
 }
 
 /* ======================
-   Hero Section
+   Main content
 ====================== */
+h1, h2, h3, h4, h5, h6,
+p, .service-card, li, label, span {
+  color: #1E1E1E; /* All main text color */
+}
+
+/* Hero section */
 .hero {
   padding: 4rem 0;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #1f3a5f;
   margin-bottom: 1rem;
 }
 
 .hero p {
-  color: #6b7280;
   max-width: 600px;
 }
 
@@ -133,7 +150,6 @@ ul {
   margin-bottom: 1rem;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
-  color: #1f3a5f;
   font-weight: 500;
 }
 
@@ -144,15 +160,17 @@ form input, form textarea {
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #d1d5db;
+  color: #1E1E1E; 
 }
 
 form button.button {
-  background: #4f9cf9;
+  background: #D6B98C;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 /* ======================
@@ -162,112 +180,87 @@ footer {
   padding: 2rem 0;
   text-align: center;
   border-top: 1px solid #e5e7eb;
-  color: #6b7280;
+  color: #1E1E1E; 
   font-size: 0.9rem;
 }
 
 /* ======================
-   Services Page Sub-Sections
-====================== */
-.container h2 {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  color: #1a1a1a;
-  border-left: 4px solid #D6B98C;
-  padding-left: 0.75rem;
-}
-
-.container h2 + p {
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-/* ======================
-   Responsive Text
+   Responsive
 ====================== */
 @media (max-width: 600px) {
-  .container h1 {
-    font-size: 1.8rem;
-  }
-  
-  .container h2 {
-    font-size: 1.25rem;
+  #logo {
+    height: 35px;
   }
 
-  .container p {
-    font-size: 0.95rem;
+  .header-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #darkModeToggle,
+  #langToggle {
+    margin-left: 0; /* stack nicely on mobile */
+    margin-top: 0.5rem;
   }
 }
 
 /* ======================
-   Manual Dark Mode
+   Dark Mode (manual & system)
 ====================== */
-body.manual-dark {
-  background-color: #1F3A3D;
-  color: #f5f5f5;
-}
-
-body.manual-dark .site-header {
-  background-color: #1a1a1a;
-  border-bottom-color: #333;
-}
-
-body.manual-dark .header-nav ul li a,
-body.manual-dark .header-buttons button {
-  color: #fff;
-  border-color: #fff;
-  background-color: #D6B98C;
-}
-
-body.manual-dark .header-nav ul li a:hover,
-body.manual-dark .header-buttons button:hover {
-  background-color: #1F3A3D;
-  color: #fff;
-  border-color: #1F3A3D;
-}
-
-body.manual-dark .service-card,
-body.manual-dark .hero,
-body.manual-dark footer,
-body.manual-dark .container p,
-body.manual-dark .container h1,
-body.manual-dark .container h2 {
-  color: #f5f5f5;
-  background-color: #1F3A3D;
-  border-color: #333;
-}
-
-/* ======================
-   System Dark Mode
-====================== */
+body.manual-dark,
 @media (prefers-color-scheme: dark) {
-  html, body {
+  body {
     background-color: #1F3A3D;
-    color: #f5f5f5;
+    color: #1E1E1E;
   }
 
   .site-header {
-    background-color: #1a1a1a;
+    background-color: #1F3A3D;
     border-bottom-color: #333;
-  }
-
-  a {
-    color: #9ecbff;
   }
 
   .service-card,
   .hero,
-  footer,
-  .container p,
-  .container h1,
-  .container h2 {
+  footer {
     background-color: #1F3A3D;
-    color: #f5f5f5;
+    color: #1E1E1E;
     border-color: #333;
   }
+
+  a {
+    color: #9ecbff; 
+  }
+
+  #darkModeToggle,
+  #langToggle {
+    background-color: #FAFAF8; /* same as default header for consistency */
+    color: #1f3a5f;
+  }
+
+  /* Interactive menu in dark mode */
+  .header-nav ul li a:hover,
+  .header-nav ul li a:focus,
+  .header-nav ul li a:active {
+    background-color: #D6B98C;
+    color: #fff;
+    border-color: #000;
+    transform: translateY(1px);
+  }
+
+  /* Interactive buttons in dark mode */
+  #darkModeToggle:hover,
+  #darkModeToggle:focus,
+  #darkModeToggle:active,
+  #langToggle:hover,
+  #langToggle:focus,
+  #langToggle:active {
+    background-color: #D6B98C;
+    color: #fff;
+    border-color: #000;
+    transform: translateY(1px);
+  }
 }
+
 
 
 
