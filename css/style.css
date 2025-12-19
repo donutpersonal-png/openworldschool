@@ -30,6 +30,7 @@ a {
 a:hover {
   color: var(--accent-dark);
 }
+
 .hero {
   padding: 4rem 0;
   background: linear-gradient(
@@ -47,6 +48,20 @@ a:hover {
 
 .hero p {
   color: #2f2f2f;
+}
+
+.service-card {
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    var(--accent-soft)
+  );
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  color: var(--brand-main);
+  font-weight: 500;
 }
 
 form button.button {
@@ -108,3 +123,4 @@ footer {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+
