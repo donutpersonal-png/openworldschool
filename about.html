@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
- <header class="site-header">
+<header class="site-header">
   <a href="index.html" class="logo-link">
     <img src="images/logo.png" alt="Open World School Logo" id="logo">
   </a>
@@ -23,8 +23,8 @@
   </nav>
 
   <div class="header-buttons">
-    <button id="langToggle">EN/RU</button>
-    <button id="darkModeToggle">Dark Mode</button>
+    <button id="langToggle" data-en="EN/RU" data-ru="АНГ/РУС">EN/RU</button>
+    <button id="darkModeToggle" data-en="Dark Mode" data-ru="Тёмный режим">Dark Mode</button>
   </div>
 </header>
 
@@ -32,10 +32,15 @@
   <h1 data-en="About Us" data-ru="О нас">About Us</h1>
   <p data-en="Open World School delivers high-quality education using innovative methods, experienced educators, and a supportive environment."
      data-ru="Open World School предоставляет качественное образование с использованием инновационных методов, опытных преподавателей и поддерживающей среды.">
+    Open World School delivers high-quality education using innovative methods, experienced educators, and a supportive environment.
   </p>
 </section>
 
-<footer class="container">© <span id="year"></span> Open World School</footer>
+<footer class="container">
+  <span data-en="© " data-ru="© "></span><span id="year"></span> 
+  <span data-en="Open World School" data-ru="Open World School">Open World School</span>
+</footer>
+
 <script src="js/lang.js"></script>
 <script src="js/darkmode.js"></script>
 </body>
