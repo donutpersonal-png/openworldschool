@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
- <header class="site-header">
+<header class="site-header">
   <a href="index.html" class="logo-link">
     <img src="images/logo.png" alt="Open World School Logo" id="logo">
   </a>
@@ -23,25 +23,36 @@
   </nav>
 
   <div class="header-buttons">
-    <button id="langToggle">EN/RU</button>
-    <button id="darkModeToggle">Dark Mode</button>
+    <button id="langToggle" data-en="EN/RU" data-ru="АНГ/РУС">EN/RU</button>
+    <button id="darkModeToggle" data-en="Dark Mode" data-ru="Тёмный режим">Dark Mode</button>
   </div>
 </header>
 
 <section class="container">
   <h1 data-en="Updates" data-ru="Новости">Updates</h1>
   <ul>
-    <li data-en="Enrollment for the next term opens soon." data-ru="Скоро открывается набор на следующий семестр.">Enrollment for the next term opens soon.</li>
-    <li data-en="New online programs launching this year." data-ru="В этом году запускаются новые онлайн-программы.">New online programs launching this year.</li>
-    <li data-en="Follow us for upcoming events and announcements." data-ru="Следите за нашими событиями и объявлениями.">Follow us for upcoming events and announcements.</li>
+    <li data-en="Enrollment for the next term opens soon." data-ru="Скоро открывается набор на следующий семестр.">
+      Enrollment for the next term opens soon.
+    </li>
+    <li data-en="New online programs launching this year." data-ru="В этом году запускаются новые онлайн-программы.">
+      New online programs launching this year.
+    </li>
+    <li data-en="Follow us for upcoming events and announcements." data-ru="Следите за нашими событиями и объявлениями.">
+      Follow us for upcoming events and announcements.
+    </li>
   </ul>
 </section>
 
-<footer class="container">© <span id="year"></span> Open World School</footer>
+<footer class="container">
+  <span data-en="© " data-ru="© "></span><span id="year"></span> 
+  <span data-en="Open World School" data-ru="Open World School">Open World School</span>
+</footer>
+
 <script src="js/lang.js"></script>
 <script src="js/darkmode.js"></script>
 </body>
 </html>
+
 
 
 
