@@ -37,7 +37,7 @@ header nav {
 .logo {
   font-weight: 600;
   font-size: 1.2rem;
-  color: #1f3a5f;
+  color: #1f3a3d;
 }
 
 .hero {
@@ -69,8 +69,8 @@ button#langToggle {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   border: none;
-  background: #4f9cf9;
-  color: #fff;
+  background: #fafaf8;
+  color: #d6b98c;
   cursor: pointer;
 }
 
@@ -106,5 +106,6 @@ form button.button {
     flex-wrap: wrap;
   }
 }
+
 
 
