@@ -1,8 +1,8 @@
 /* Base Styles */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-  color: #1e1e1e;
-  background: #fafaf8;
+  color: var(--text-main);
+  background: var(--bg-main);
   margin: 0;
   line-height: 1.6;
 }
@@ -14,8 +14,28 @@ body {
 }
 
 a {
-  color: #1f3a5f;
+  color: var(--brand-main);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--brand-soft);
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 0;
+  background: var(--bg-main);
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--brand-main);
 }
 
 ul {
@@ -25,88 +45,93 @@ ul {
   padding: 0;
 }
 
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1rem 0;
-  background: #fafaf8;
-}
-
-.logo {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #1f3a3d;
-}
-
+/* Hero */
 .hero {
   padding: 4rem 0;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #1f3a3d;
+  color: var(--brand-main);
   margin-bottom: 1rem;
 }
 
 .hero p {
-  color: #1e1e1e;
+  color: var(--text-main);
   max-width: 600px;
 }
 
+/* Cards */
 .service-card {
-  background: #fff;
+  background: var(--bg-card);
   padding: 1.5rem;
   margin-bottom: 1rem;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  color: #1f3a5f;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  color: var(--brand-main);
   font-weight: 500;
 }
 
+/* Language toggle */
 button#langToggle {
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  border: none;
-  background: #fafaf8;
-  color: #d6b98c;
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--accent-main);
   cursor: pointer;
 }
 
-footer {
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 1px solid #e5e7eb;
-  color: #6b7280;
-  font-size: 0.9rem;
+button#langToggle:hover {
+  background: var(--accent-soft);
+  color: var(--brand-main);
 }
-
-/* Form styles */
-form input, form textarea {
-  padding: 0.5rem;
+/* Forms */
+form input,
+form textarea {
+  padding: 0.6rem;
   border-radius: 6px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-light);
+  font-family: inherit;
 }
 
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--brand-main);
+}
+
+/* Primary button */
 form button.button {
-  background: #4f9cf9;
-  color: #d6b9ac;
+  background: var(--brand-main);
+  color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  font-weight: 500;
 }
 
+form button.button:hover {
+  background: var(--brand-soft);
+}
+
+/* Footer */
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
   }
+
   ul {
     flex-wrap: wrap;
   }
 }
-
-
-
-
