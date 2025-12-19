@@ -1,0 +1,5 @@
+---
+title: "Enrollment Opening Soon"
+lang: "en"
+---
+Enrollment for the next term opens soon. Stay tuned!

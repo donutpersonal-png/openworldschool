@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Open World School</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header>
+  <nav class="container">
+    <div class="logo">Open World School</div>
+    <ul>
+      <li><a href="index.html" data-en="Home" data-ru="Главная">Home</a></li>
+      <li><a href="about.html" data-en="About" data-ru="О школе">About</a></li>
+      <li><a href="services.html" data-en="Services" data-ru="Услуги">Services</a></li>
+      <li><a href="updates.html" data-en="Updates" data-ru="Новости">Updates</a></li>
+      <li><a href="contact.html" data-en="Contact" data-ru="Контакты">Contact</a></li>
+    </ul>
+    <button id="langToggle">RU</button>
+  </nav>
+</header>
+
+<section class="container">
+  <h1 data-en="Contact Us" data-ru="Связаться с нами">Contact Us</h1>
+  <form onsubmit="event.preventDefault(); alert('Form submitted');">
+    <label data-en="Name" data-ru="Имя">Name</label><br />
+    <input type="text" required style="width:100%; margin-bottom:1rem;" /><br />
+    <label data-en="Email" data-ru="Электронная почта">Email</label><br />
+    <input type="email" required style="width:100%; margin-bottom:1rem;" /><br />
+    <label data-en="Message" data-ru="Сообщение">Message</label><br />
+    <textarea required style="width:100%; margin-bottom:1rem;"></textarea><br />
+    <button type="submit" class="button" data-en="Send Message" data-ru="Отправить">Send Message</button>
+  </form>
+</section>
+
+<footer class="container">© <span id="year"></span> Open World School</footer>
+<script src="js/lang.js"></script>
+</body>
+</html>
