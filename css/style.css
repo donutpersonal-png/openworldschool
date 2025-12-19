@@ -72,6 +72,7 @@ ul {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  background-color: #FAFAF8; /* match header background */
 }
 
 /* Interactive states: hover, focus, active */
@@ -92,8 +93,8 @@ ul {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   border: 2px solid #000;
-  background: #D6B98C;
-  color: #fff;
+  background: #FAFAF8; /* same as menu default */
+  color: #1f3a5f;      /* same as menu default */
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
@@ -102,163 +103,25 @@ ul {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease; /* smooth hover/press */
-  margin-left: 0.5rem; /* spacing between buttons */
+  margin-left: 0.5rem;
 }
 
-/* Interactive states: hover, focus, active */
+/* Hover/focus/active: match menu behavior */
 #darkModeToggle:hover,
 #darkModeToggle:focus,
 #darkModeToggle:active,
 #langToggle:hover,
 #langToggle:focus,
 #langToggle:active {
-  background-color: #fff;    /* simulate press */
-  color: #D6B98C;
+  background-color: #D6B98C;
+  color: #fff;
   border-color: #000;
-  transform: translateY(1px); /* subtle press effect */
+  transform: translateY(1px);
 }
 
 /* ======================
    Main content
-====================== */
-h1, h2, h3, h4, h5, h6,
-p, .service-card, li, label, span {
-  color: #1E1E1E; /* All main text color */
-}
 
-/* Hero section */
-.hero {
-  padding: 4rem 0;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  max-width: 600px;
-}
-
-/* ======================
-   Service Cards
-====================== */
-.service-card {
-  background: #fff;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  font-weight: 500;
-}
-
-/* ======================
-   Forms
-====================== */
-form input, form textarea {
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 1px solid #d1d5db;
-  color: #1E1E1E; 
-}
-
-form button.button {
-  background: #D6B98C;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* ======================
-   Footer
-====================== */
-footer {
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 1px solid #e5e7eb;
-  color: #1E1E1E; 
-  font-size: 0.9rem;
-}
-
-/* ======================
-   Responsive
-====================== */
-@media (max-width: 600px) {
-  #logo {
-    height: 35px;
-  }
-
-  .header-nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #darkModeToggle,
-  #langToggle {
-    margin-left: 0; /* stack nicely on mobile */
-    margin-top: 0.5rem;
-  }
-}
-
-/* ======================
-   Dark Mode (manual & system)
-====================== */
-body.manual-dark,
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1F3A3D;
-    color: #1E1E1E;
-  }
-
-  .site-header {
-    background-color: #1F3A3D;
-    border-bottom-color: #333;
-  }
-
-  .service-card,
-  .hero,
-  footer {
-    background-color: #1F3A3D;
-    color: #1E1E1E;
-    border-color: #333;
-  }
-
-  a {
-    color: #9ecbff; 
-  }
-
-  #darkModeToggle,
-  #langToggle {
-    background: #D6B98C;
-    color: #fff;
-  }
-
-  /* Interactive menu in dark mode */
-  .header-nav ul li a:hover,
-  .header-nav ul li a:focus,
-  .header-nav ul li a:active {
-    background-color: #D6B98C;
-    color: #fff;
-    border-color: #000;
-    transform: translateY(1px);
-  }
-
-  /* Interactive buttons in dark mode */
-  #darkModeToggle:hover,
-  #darkModeToggle:focus,
-  #darkModeToggle:active,
-  #langToggle:hover,
-  #langToggle:focus,
-  #langToggle:active {
-    background-color: #fff;
-    color: #D6B98C;
-    border-color: #000;
-    transform: translateY(1px);
-  }
-}
 
 
 
