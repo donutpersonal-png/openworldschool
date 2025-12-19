@@ -1,35 +1,19 @@
-/* Base Styles */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
   color: var(--text-main);
-  background: var(--bg-main);
+  background: linear-gradient(
+    to bottom,
+    var(--bg-main),
+    var(--bg-section)
+  );
   margin: 0;
   line-height: 1.6;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.5rem;
-}
-
-a {
-  color: var(--brand-main);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--brand-soft);
-}
-
-/* Navigation */
 header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: var(--bg-section);
   border-bottom: 1px solid var(--border-light);
   padding: 1rem 0;
-  background: var(--bg-main);
 }
 
 .logo {
@@ -38,100 +22,89 @@ header nav {
   color: var(--brand-main);
 }
 
-ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
+a {
+  color: var(--brand-main);
+  text-decoration: none;
 }
 
-/* Hero */
+a:hover {
+  color: var(--accent-dark);
+}
 .hero {
   padding: 4rem 0;
+  background: linear-gradient(
+    to right,
+    var(--bg-section),
+    var(--accent-soft)
+  );
+  border-radius: 24px;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   color: var(--brand-main);
-  margin-bottom: 1rem;
 }
 
 .hero p {
-  color: var(--text-main);
-  max-width: 600px;
+  color: #2f2f2f;
 }
 
-/* Cards */
-.service-card {
-  background: var(--bg-card);
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 12px;
-  border: 1px solid var(--border-light);
-  color: var(--brand-main);
-  font-weight: 500;
-}
-
-/* Language toggle */
-button#langToggle {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--border-light);
-  background: transparent;
-  color: var(--accent-main);
+form button.button {
+  background: linear-gradient(
+    to right,
+    var(--accent-main),
+    var(--accent-dark)
+  );
+  color: #1f1f1f;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
+  font-weight: 600;
 }
 
-button#langToggle:hover {
-  background: var(--accent-soft);
-  color: var(--brand-main);
+form button.button:hover {
+  background: linear-gradient(
+    to right,
+    var(--accent-dark),
+    var(--accent-main)
+  );
 }
-/* Forms */
+
 form input,
 form textarea {
   padding: 0.6rem;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid var(--border-light);
+  background: var(--bg-section);
   font-family: inherit;
 }
 
 form input:focus,
 form textarea:focus {
   outline: none;
-  border-color: var(--brand-main);
+  border-color: var(--accent-main);
+  background: #ffffff;
 }
 
-/* Primary button */
-form button.button {
-  background: var(--brand-main);
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  border: none;
+button#langToggle {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-main);
+  background: var(--accent-soft);
+  color: var(--brand-main);
   cursor: pointer;
-  font-weight: 500;
 }
 
-form button.button:hover {
-  background: var(--brand-soft);
+button#langToggle:hover {
+  background: var(--accent-main);
 }
 
-/* Footer */
 footer {
   padding: 2rem 0;
   text-align: center;
+  background: var(--bg-section);
   border-top: 1px solid var(--border-light);
   color: var(--text-muted);
   font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  ul {
-    flex-wrap: wrap;
-  }
 }
