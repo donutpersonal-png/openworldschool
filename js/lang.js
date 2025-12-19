@@ -1,17 +1,18 @@
-// Set current year in footer
-document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+const langToggle = document.getElementById('langToggle');
+let currentLang = localStorage.getItem('lang') || 'en';
 
-// Language toggle
-let currentLang = 'en';
-const toggleBtn = document.getElementById('langToggle');
-
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'ru' : 'en';
-    toggleBtn.textContent = currentLang === 'en' ? 'RU' : 'EN';
-    
-    document.querySelectorAll('[data-en]').forEach(el => {
-      el.textContent = el.dataset[currentLang];
-    });
+function updateMenuLanguage(lang) {
+  const links = document.querySelectorAll('#navMenu a');
+  links.forEach(link => {
+    link.textContent = link.getAttribute(`data-${lang}`);
   });
 }
+
+// Set initial language on page load
+updateMenuLanguage(currentLang);
+
+langToggle.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'ru' : 'en';
+  updateMenuLanguage(currentLang);
+  localStorage.setItem('lang', currentLang);
+});
