@@ -98,14 +98,6 @@ form button.button {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  ul {
-    flex-wrap: wrap;
-  }
-}
 /* Logo overlay — does NOT affect layout */
 .floating-logo {
   position: fixed;
@@ -140,7 +132,14 @@ body {
 }
 
 #logo {
-  height: 35px;
+  max-height: 8vh;     /* scales with viewport height */
+  max-width: 30vw;    /* scales with viewport width */
+  height: auto;
   width: auto;
 }
 
+@media (max-width: 600px) {
+  #logo {
+    max-height: 40px;
+  }
+}
