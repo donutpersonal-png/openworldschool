@@ -106,3 +106,15 @@ form button.button {
     flex-wrap: wrap;
   }
 }
+/* Logo overlay — does NOT affect layout */
+.floating-logo {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 9999;
+}
+
+.floating-logo img {
+  height: 50px;      /* adjust size safely */
+  width: auto;
+}
