@@ -115,6 +115,7 @@ form button.button {
 }
 
 .floating-logo img {
-  height: 50px;      /* adjust size safely */
+  height: 100px;      /* adjust size safely */
   width: auto;
 }
+
