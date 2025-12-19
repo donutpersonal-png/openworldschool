@@ -1,6 +1,6 @@
-/* =====================
+/* ======================
    Base Styles
-===================== */
+====================== */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
   color: #1a1a1a;
@@ -29,47 +29,64 @@ ul {
   margin: 0;
 }
 
-/* =====================
+/* ======================
    Header
-===================== */
+====================== */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  background-color: #FAFAF8;
+  height: 70px;              
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  background-color: #FAFAF8;
   box-sizing: border-box;
-  border-bottom: 1px solid #e5e7eb;
   z-index: 1000;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 /* Logo */
 #logo {
-  max-height: 8vh;
-  max-width: 30vw;
-  height: auto;
+  height: 50px;      /* fixed max height */
   width: auto;
+  display: block;
 }
 
 /* Navigation */
-.site-header nav ul {
+.header-nav ul {
+  list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-.site-header nav a {
-  font-weight: 500;
+.header-nav ul li a {
+  text-decoration: none;
   color: #1f3a5f;
+  font-weight: bold;
 }
 
-/* =====================
-   Hero & Cards
-===================== */
+.header-nav ul li a:hover {
+  color: #007BFF;
+}
+
+/* Dark mode toggle button */
+#darkModeToggle {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #4f9cf9;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ======================
+   Hero
+====================== */
 .hero {
   padding: 4rem 0;
 }
@@ -77,6 +94,7 @@ ul {
 .hero h1 {
   font-size: 2.5rem;
   color: #1f3a5f;
+  margin-bottom: 1rem;
 }
 
 .hero p {
@@ -84,25 +102,29 @@ ul {
   max-width: 600px;
 }
 
+/* ======================
+   Service Cards
+====================== */
 .service-card {
-  background: #ffffff;
+  background: #fff;
   padding: 1.5rem;
   margin-bottom: 1rem;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
+  color: #1f3a5f;
+  font-weight: 500;
 }
 
-/* =====================
+/* ======================
    Forms
-===================== */
-form input,
-form textarea {
+====================== */
+form input, form textarea {
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #d1d5db;
 }
 
-form button {
+form button.button {
   background: #4f9cf9;
   color: #fff;
   padding: 0.75rem 1.5rem;
@@ -111,9 +133,9 @@ form button {
   cursor: pointer;
 }
 
-/* =====================
+/* ======================
    Footer
-===================== */
+====================== */
 footer {
   padding: 2rem 0;
   text-align: center;
@@ -122,35 +144,72 @@ footer {
   font-size: 0.9rem;
 }
 
-/* =====================
-   Responsive Logo
-===================== */
+/* ======================
+   Responsive
+====================== */
 @media (max-width: 600px) {
   #logo {
-    max-height: 40px;
+    height: 35px;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
-/* =====================
-   Dark Mode
-===================== */
+/* ======================
+   Manual Dark Mode
+====================== */
+body.manual-dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.manual-dark .site-header {
+  background-color: #1a1a1a;
+  border-bottom-color: #333;
+}
+
+body.manual-dark .header-nav ul li a {
+  color: #9ecbff;
+}
+
+body.manual-dark #darkModeToggle {
+  background: #6b9cff;
+}
+
+body.manual-dark .service-card,
+body.manual-dark .hero,
+body.manual-dark footer {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  border-color: #333;
+}
+
+/* ======================
+   Auto dark mode via system
+====================== */
 @media (prefers-color-scheme: dark) {
-  body {
+  html, body {
     background-color: #121212;
     color: #f5f5f5;
   }
 
   .site-header {
     background-color: #1a1a1a;
-    border-bottom-color: #2a2a2a;
+    border-bottom-color: #333;
   }
 
   a {
     color: #9ecbff;
   }
 
-  .service-card {
-    background-color: #1e1e1e;
-    border-color: #2a2a2a;
+  .service-card,
+  .hero,
+  footer {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    border-color: #333;
   }
 }
