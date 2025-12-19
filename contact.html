@@ -23,25 +23,33 @@
   </nav>
 
   <div class="header-buttons">
-    <button id="langToggle">EN/RU</button>
-    <button id="darkModeToggle">Dark Mode</button>
+    <button id="langToggle" data-en="EN/RU" data-ru="АНГ/РУС">EN/RU</button>
+    <button id="darkModeToggle" data-en="Dark Mode" data-ru="Тёмный режим">Dark Mode</button>
   </div>
 </header>
 
 <section class="container">
   <h1 data-en="Contact Us" data-ru="Связаться с нами">Contact Us</h1>
+  
   <form onsubmit="event.preventDefault(); alert('Form submitted');">
     <label data-en="Name" data-ru="Имя">Name</label><br />
     <input type="text" required style="width:100%; margin-bottom:1rem;" /><br />
+
     <label data-en="Email" data-ru="Электронная почта">Email</label><br />
     <input type="email" required style="width:100%; margin-bottom:1rem;" /><br />
+
     <label data-en="Message" data-ru="Сообщение">Message</label><br />
     <textarea required style="width:100%; margin-bottom:1rem;"></textarea><br />
+
     <button type="submit" class="button" data-en="Send Message" data-ru="Отправить">Send Message</button>
   </form>
 </section>
 
-<footer class="container">© <span id="year"></span> Open World School</footer>
+<footer class="container">
+  <span data-en="© " data-ru="© "></span><span id="year"></span> 
+  <span data-en="Open World School" data-ru="Open World School">Open World School</span>
+</footer>
+
 <script src="js/lang.js"></script>
 <script src="js/darkmode.js"></script>
 </body>
