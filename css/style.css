@@ -31,7 +31,7 @@ header nav {
   align-items: center;
   border-bottom: 1px solid #e5e7eb;
   padding: 1rem 0;
-  background: #fff;
+  background: #fafaf8;
 }
 
 .logo {
@@ -46,12 +46,12 @@ header nav {
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #1f3a5f;
+  color: #1f3a3d;
   margin-bottom: 1rem;
 }
 
 .hero p {
-  color: #6b7280;
+  color: #1e1e1e;
   max-width: 600px;
 }
 
@@ -106,6 +106,7 @@ form button.button {
     flex-wrap: wrap;
   }
 }
+
 
 
 
