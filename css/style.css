@@ -20,12 +20,6 @@ a {
   text-decoration: none;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 /* ======================
    Header
 ====================== */
@@ -42,7 +36,6 @@ ul {
   background-color: #FAFAF8;
   border-bottom: 1px solid #e5e7eb;
   z-index: 1000;
-  box-sizing: border-box;
 }
 
 #logo {
@@ -53,8 +46,11 @@ ul {
    Navigation
 ====================== */
 .header-nav ul {
+  list-style: none;
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .header-nav ul li a {
@@ -69,6 +65,7 @@ ul {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .header-nav ul li a:hover,
@@ -82,8 +79,8 @@ ul {
 /* ======================
    Header Buttons
 ====================== */
-#langToggle,
-#darkModeToggle {
+#darkModeToggle,
+#langToggle {
   padding: 0.45rem 0.9rem;
   border-radius: 6px;
   border: 2px solid #000;
@@ -96,33 +93,29 @@ ul {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  margin-left: 0.5rem;
+  white-space: nowrap;
 }
 
-#langToggle:hover,
 #darkModeToggle:hover,
-#langToggle:focus,
 #darkModeToggle:focus,
-#langToggle:active,
-#darkModeToggle:active {
+#darkModeToggle:active,
+#langToggle:hover,
+#langToggle:focus,
+#langToggle:active {
   background-color: #D6B98C;
   color: #fff;
   transform: translateY(1px);
 }
 
 /* ======================
-   Typography
+   Content
 ====================== */
-h1, h2, h3, h4, h5, h6,
-p, li, label, span {
+h1, h2, h3, p, li, label, span {
   color: #1E1E1E;
 }
 
-/* ======================
-   Service Cards
-====================== */
 .service-card {
-  background-color: #fff;
+  background: #fff;
   padding: 1.5rem;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
@@ -134,21 +127,18 @@ p, li, label, span {
 ====================== */
 form input,
 form textarea {
-  width: 100%;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #d1d5db;
-  color: #1E1E1E;
-  background-color: #fff;
+  width: 100%;
 }
 
 form button.button {
-  margin-top: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  background-color: #D6B98C;
+  color: #fff;
+  padding: 0.6rem 1.4rem;
   border-radius: 6px;
   border: 2px solid #000;
-  background-color: #FAFAF8;
-  color: #1f3a5f;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -157,8 +147,7 @@ form button.button {
 form button.button:hover,
 form button.button:focus,
 form button.button:active {
-  background-color: #D6B98C;
-  color: #fff;
+  background-color: #c7a974;
   transform: translateY(1px);
 }
 
@@ -173,24 +162,40 @@ footer {
 }
 
 /* ======================
-   Mobile Fixes
+   Mobile Fixes (IMPORTANT)
 ====================== */
-@media (max-width: 700px) {
-  .header-nav ul {
+@media (max-width: 600px) {
+  .site-header {
+    height: auto;
+    padding: 10px;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
   }
 
-  .header-nav ul li a,
-  #langToggle,
-  #darkModeToggle {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.7rem;
+  .header-nav ul {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
   }
 
-  #logo {
-    height: 38px;
+  .header-nav ul li a {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.95rem;
+    width: auto;          /* KEY FIX */
+    max-width: max-content;
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  #darkModeToggle,
+  #langToggle {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.95rem;
+    width: auto;          /* KEY FIX */
+    max-width: max-content;
   }
 }
 
@@ -209,7 +214,6 @@ body.manual-dark .site-header {
 
 body.manual-dark h1,
 body.manual-dark h2,
-body.manual-dark h3,
 body.manual-dark p,
 body.manual-dark li,
 body.manual-dark label,
@@ -223,28 +227,22 @@ body.manual-dark footer {
   border-color: #333;
 }
 
-body.manual-dark input,
-body.manual-dark textarea {
-  background-color: #FAFAF8;
-  color: #1E1E1E;
-}
-
-/* Buttons still interactive in dark mode */
 body.manual-dark .header-nav ul li a,
-body.manual-dark #langToggle,
 body.manual-dark #darkModeToggle,
-body.manual-dark form button.button {
+body.manual-dark #langToggle {
   background-color: #FAFAF8;
   color: #1f3a5f;
 }
 
 body.manual-dark .header-nav ul li a:hover,
-body.manual-dark #langToggle:hover,
 body.manual-dark #darkModeToggle:hover,
+body.manual-dark #langToggle:hover,
 body.manual-dark form button.button:hover {
   background-color: #D6B98C;
   color: #fff;
 }
+
+
 
 
 
