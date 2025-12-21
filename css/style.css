@@ -3,11 +3,11 @@
 ====================== */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-  color: #1E1E1E;
+  color: #1E1E1E; /* Main text color */
   background-color: #FAFAF8;
   margin: 0;
   line-height: 1.6;
-  padding-top: 70px;
+  padding-top: 70px; /* space for fixed header */
 }
 
 .container {
@@ -20,6 +20,13 @@ a {
   text-decoration: none;
 }
 
+/* Lists for layout */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* ======================
    Header
 ====================== */
@@ -28,74 +35,86 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 70px;              
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   background-color: #FAFAF8;
-  border-bottom: 1px solid #e5e7eb;
+  box-sizing: border-box;
   z-index: 1000;
+  border-bottom: 1px solid #e5e7eb;
 }
 
+/* Logo */
 #logo {
   height: 50px;
+  width: auto;
+  display: block;
 }
 
 /* ======================
-   Navigation
+   Navigation menu
 ====================== */
 .header-nav ul {
-  list-style: none;
   display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .header-nav ul li a {
-  color: #1f3a5f;
+  text-decoration: none;
+  color: #1f3a5f;          
   font-weight: bold;
-  font-size: 1rem;
-  padding: 0.45rem 0.9rem;
-  border: 2px solid #000;
-  border-radius: 6px;
-  background-color: #FAFAF8;
+  font-size: 1rem;         
+  padding: 0.5rem 1rem;    
+  border: 2px solid #000;  
+  border-radius: 6px;      
+  line-height: 1.5;        
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  white-space: nowrap;
+  background-color: #FAFAF8;
 }
 
+/* Interactive states: hover, focus, active */
 .header-nav ul li a:hover,
 .header-nav ul li a:focus,
 .header-nav ul li a:active {
-  background-color: #D6B98C;
-  color: #fff;
+  color: #fff;             
+  background-color: #D6B98C; 
+  border-color: #000;      
   transform: translateY(1px);
 }
 
 /* ======================
-   Header Buttons
+   Header buttons (language & dark mode)
 ====================== */
+.header-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 #darkModeToggle,
 #langToggle {
-  padding: 0.45rem 0.9rem;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
   border: 2px solid #000;
-  background-color: #FAFAF8;
+  background: #FAFAF8; 
   color: #1f3a5f;
+  cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
-  cursor: pointer;
+  line-height: 1.5;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  white-space: nowrap;
 }
 
+/* Hover/focus/active: match menu behavior */
 #darkModeToggle:hover,
 #darkModeToggle:focus,
 #darkModeToggle:active,
@@ -104,50 +123,70 @@ a {
 #langToggle:active {
   background-color: #D6B98C;
   color: #fff;
+  border-color: #000;
   transform: translateY(1px);
 }
 
 /* ======================
-   Content
+   Main content
 ====================== */
-h1, h2, h3, p, li, label, span {
+h1, h2, h3, h4, h5, h6,
+p, .service-card, li, label, span, button.button {
   color: #1E1E1E;
 }
 
+/* Hero section */
+.hero {
+  padding: 4rem 0;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+}
+
+/* ======================
+   Service Cards
+====================== */
 .service-card {
   background: #fff;
   padding: 1.5rem;
+  margin-bottom: 1rem;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
-  margin-bottom: 1rem;
+  font-weight: 500;
 }
 
 /* ======================
    Forms
 ====================== */
-form input,
-form textarea {
+form input, form textarea {
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #d1d5db;
-  width: 100%;
+  color: #1E1E1E; 
 }
 
 form button.button {
-  background-color: #D6B98C;
+  background: #D6B98C;
   color: #fff;
-  padding: 0.6rem 1.4rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 6px;
-  border: 2px solid #000;
-  font-weight: bold;
+  border: none;
   cursor: pointer;
+  font-weight: bold;
   transition: all 0.2s ease;
 }
 
 form button.button:hover,
 form button.button:focus,
 form button.button:active {
-  background-color: #c7a974;
+  background-color: #1f3a5f;
+  color: #fff;
   transform: translateY(1px);
 }
 
@@ -155,92 +194,91 @@ form button.button:active {
    Footer
 ====================== */
 footer {
-  text-align: center;
   padding: 2rem 0;
+  text-align: center;
   border-top: 1px solid #e5e7eb;
+  color: #1E1E1E; 
   font-size: 0.9rem;
 }
 
 /* ======================
-   Mobile Fixes (IMPORTANT)
+   Responsive
 ====================== */
-@media (max-width: 600px) {
-  .site-header {
-    height: auto;
-    padding: 10px;
-    flex-wrap: wrap;
-  }
-
+@media (max-width: 768px) {
   .header-nav ul {
     flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+    width: 100%;
   }
 
   .header-nav ul li a {
-    padding: 0.4rem 0.75rem;
-    font-size: 0.95rem;
-    width: auto;          /* KEY FIX */
-    max-width: max-content;
+    width: 100%;
+    text-align: center;
   }
 
   .header-buttons {
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
   }
 
   #darkModeToggle,
   #langToggle {
-    padding: 0.4rem 0.75rem;
-    font-size: 0.95rem;
-    width: auto;          /* KEY FIX */
-    max-width: max-content;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 0.5rem;
   }
 }
 
 /* ======================
-   Dark Mode
+   Dark Mode (manual & system)
 ====================== */
-body.manual-dark {
-  background-color: #1F3A3D;
-  color: #FAFAF8;
+body.manual-dark,
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1F3A3D;
+    color: #1E1E1E;
+  }
+
+  .site-header {
+    background-color: #1F3A3D;
+    border-bottom-color: #333;
+  }
+
+  .service-card,
+  .hero,
+  footer {
+    background-color: #1F3A3D;
+    color: #1E1E1E;
+    border-color: #333;
+  }
+
+  a {
+    color: #9ecbff; 
+  }
+
+  #darkModeToggle,
+  #langToggle {
+    background-color: #FAFAF8; 
+    color: #1f3a5f;
+  }
+
+  .header-nav ul li a:hover,
+  .header-nav ul li a:focus,
+  .header-nav ul li a:active,
+  #darkModeToggle:hover,
+  #darkModeToggle:focus,
+  #darkModeToggle:active,
+  #langToggle:hover,
+  #langToggle:focus,
+  #langToggle:active {
+    background-color: #D6B98C;
+    color: #fff;
+    border-color: #000;
+    transform: translateY(1px);
+  }
 }
 
-body.manual-dark .site-header {
-  background-color: #1F3A3D;
-  border-bottom-color: #333;
-}
-
-body.manual-dark h1,
-body.manual-dark h2,
-body.manual-dark p,
-body.manual-dark li,
-body.manual-dark label,
-body.manual-dark span {
-  color: #FAFAF8;
-}
-
-body.manual-dark .service-card,
-body.manual-dark footer {
-  background-color: #1F3A3D;
-  border-color: #333;
-}
-
-body.manual-dark .header-nav ul li a,
-body.manual-dark #darkModeToggle,
-body.manual-dark #langToggle {
-  background-color: #FAFAF8;
-  color: #1f3a5f;
-}
-
-body.manual-dark .header-nav ul li a:hover,
-body.manual-dark #darkModeToggle:hover,
-body.manual-dark #langToggle:hover,
-body.manual-dark form button.button:hover {
-  background-color: #D6B98C;
-  color: #fff;
-}
 
 
 
