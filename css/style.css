@@ -49,11 +49,10 @@ ul {
 
 #logo {
   height: 50px;
-  width: auto;
 }
 
 /* ======================
-   Navigation menu
+   Navigation Menu
 ====================== */
 .header-nav ul li a {
   color: #1f3a5f;
@@ -62,11 +61,11 @@ ul {
   padding: 0.5rem 1rem;
   border: 2px solid #000;
   border-radius: 6px;
+  background-color: #FAFAF8;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  background-color: #FAFAF8;
 }
 
 .header-nav ul li a:hover,
@@ -78,23 +77,24 @@ ul {
 }
 
 /* ======================
-   Header buttons
+   Header Buttons
 ====================== */
 #darkModeToggle,
-#langToggle {
+#langToggle,
+form button.button {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   border: 2px solid #000;
-  background: #FAFAF8;
+  background-color: #FAFAF8;
   color: #1f3a5f;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
+  line-height: 1.5;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  margin-left: 0.5rem;
 }
 
 #darkModeToggle:hover,
@@ -102,27 +102,21 @@ ul {
 #darkModeToggle:active,
 #langToggle:hover,
 #langToggle:focus,
-#langToggle:active {
+#langToggle:active,
+form button.button:hover,
+form button.button:focus,
+form button.button:active {
   background-color: #D6B98C;
   color: #fff;
   transform: translateY(1px);
 }
 
 /* ======================
-   Main content
+   Content
 ====================== */
 h1, h2, h3, h4, h5, h6,
-p, .service-card, li, label, span {
+p, li, label, span, .service-card {
   color: #1E1E1E;
-}
-
-.hero {
-  padding: 4rem 0;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
 }
 
 .service-card {
@@ -138,19 +132,12 @@ p, .service-card, li, label, span {
 ====================== */
 form input,
 form textarea {
+  width: 100%;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #d1d5db;
-}
-
-form button.button {
-  background: #D6B98C;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
+  color: #1E1E1E;
+  background-color: #fff;
 }
 
 /* ======================
@@ -161,10 +148,25 @@ footer {
   text-align: center;
   border-top: 1px solid #e5e7eb;
   font-size: 0.9rem;
+  color: #1E1E1E;
 }
 
 /* ======================
-   Dark Mode (MANUAL)
+   Responsive
+====================== */
+@media (max-width: 600px) {
+  #logo {
+    height: 35px;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ======================
+   Dark Mode
 ====================== */
 body.manual-dark {
   background-color: #1F3A3D;
@@ -186,46 +188,34 @@ body.manual-dark span {
   color: #FAFAF8;
 }
 
-body.manual-dark .service-card,
-body.manual-dark footer {
+body.manual-dark .service-card {
   background-color: #1F3A3D;
   border-color: #333;
 }
 
-body.manual-dark .header-nav ul li a,
-body.manual-dark #darkModeToggle,
-body.manual-dark #langToggle {
+body.manual-dark form input,
+body.manual-dark form textarea {
   background-color: #1F3A3D;
   color: #FAFAF8;
-  border-color: #FAFAF8;
+  border-color: #555;
 }
 
-body.manual-dark .header-nav ul li a:hover,
+/* Buttons remain light & interactive */
+body.manual-dark #darkModeToggle,
+body.manual-dark #langToggle,
+body.manual-dark form button.button {
+  background-color: #FAFAF8;
+  color: #1f3a5f;
+}
+
 body.manual-dark #darkModeToggle:hover,
-body.manual-dark #langToggle:hover {
+body.manual-dark #langToggle:hover,
+body.manual-dark form button.button:hover {
   background-color: #D6B98C;
-  color: #000;
+  color: #fff;
 }
 
-/* ======================
-   Responsive
-====================== */
-@media (max-width: 600px) {
-  #logo {
-    height: 35px;
-  }
 
-  .header-nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #darkModeToggle,
-  #langToggle {
-    margin-left: 0;
-    margin-top: 0.5rem;
-  }
-}
 
 
 
