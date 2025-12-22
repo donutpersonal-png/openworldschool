@@ -30,14 +30,19 @@
 
 <section class="container">
   <h1 data-en="Contact Us" data-ru="Связаться с нами">Contact Us</h1>
-
+  
   <p data-en="Please provide your current English level and your learning goals. For students over 18 and parents, feel free to ask as many questions as needed — we welcome everyone."
      data-ru="Пожалуйста, укажите ваш текущий уровень английского языка и ваши учебные цели. Студенты старше 18 лет и родители могут задавать столько вопросов, сколько захотят — мы рады всем.">
   </p>
 
   <!-- Netlify Form -->
-  <form name="contact" method="POST" data-netlify="true" id="contactForm">
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
     <input type="hidden" name="form-name" value="contact" />
+
+    <!-- Honeypot for spam -->
+    <p hidden>
+      <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+    </p>
 
     <label data-en="Name" data-ru="Имя">Name</label><br />
     <input type="text" name="name" required style="width:100%; margin-bottom:1rem;" /><br />
@@ -65,13 +70,12 @@
 <script src="js/darkmode.js"></script>
 
 <script>
-  // Handle Netlify form submission
+  // Handle form submission with Netlify while showing confirmation
   const form = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
-
     const formData = new FormData(form);
 
     fetch("/", {
@@ -80,17 +84,18 @@
       body: new URLSearchParams(formData).toString()
     })
     .then(() => {
-      form.style.display = 'none';          // hide the form
-      formMessage.style.display = 'block';  // show confirmation
+      form.style.display = 'none';
+      formMessage.style.display = 'block';
     })
     .catch(error => alert("Error: " + error));
   });
 
-  // Set current year in footer
+  // Set current year
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
 
 
