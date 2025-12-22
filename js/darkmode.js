@@ -1,6 +1,6 @@
 const darkToggle = document.getElementById('darkModeToggle');
 
-// Apply saved mode on load
+// Load saved preference
 if (localStorage.getItem('darkMode') === 'enabled') {
   document.body.classList.add('manual-dark');
 }
@@ -14,6 +14,8 @@ darkToggle.addEventListener('click', () => {
     localStorage.setItem('darkMode', 'disabled');
   }
 });
+
+
 
 
 
