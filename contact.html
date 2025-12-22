@@ -36,7 +36,7 @@
   </p>
 
   <!-- Netlify Form -->
-  <form name="contact" method="POST" data-netlify="true">
+  <form name="contact" method="POST" data-netlify="true" id="contactForm">
     <input type="hidden" name="form-name" value="contact" />
 
     <label data-en="Name" data-ru="Имя">Name</label><br />
@@ -51,6 +51,8 @@
     <button type="submit" class="button" data-en="Send Message" data-ru="Отправить">Send Message</button>
   </form>
 
+  <p id="formMessage" style="margin-top:1rem; display:none;" data-en="Thank you! Your message has been sent." data-ru="Спасибо! Ваше сообщение отправлено."></p>
+
   <p data-en="We aim to respond within 24 hours." data-ru="Мы стремимся ответить в течение 24 часов."></p>
 </section>
 
@@ -61,8 +63,36 @@
 
 <script src="js/lang.js"></script>
 <script src="js/darkmode.js"></script>
+
+<script>
+  // Handle Netlify form submission
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      form.style.display = 'none';          // hide the form
+      formMessage.style.display = 'block';  // show confirmation
+    })
+    .catch(error => alert("Error: " + error));
+  });
+
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+
+
 
 
 
