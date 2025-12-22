@@ -32,14 +32,17 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 16px;
   background-color: #FAFAF8;
   border-bottom: 1px solid #e5e7eb;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
+/* Logo */
 #logo {
   height: 50px;
+  width: auto;
 }
 
 /* ======================
@@ -48,30 +51,50 @@ a {
 .header-nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
-  margin: 0;
+  gap: 0.75rem;
   padding: 0;
+  margin: 0;
 }
 
-.header-nav ul li a,
-#langToggle,
-#darkModeToggle {
+.header-nav ul li a {
+  color: #1f3a5f;
   font-weight: bold;
-  font-size: 1rem;
   padding: 0.5rem 1rem;
   border: 2px solid #000;
   border-radius: 6px;
   background-color: #FAFAF8;
-  color: #1f3a5f;
-  cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Hover / Active */
-.header-nav ul li a:hover,
+.header-nav ul li a:hover {
+  background-color: #D6B98C;
+  color: #fff;
+  transform: translateY(1px);
+}
+
+/* ======================
+   Header Buttons
+====================== */
+.header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#langToggle,
+#darkModeToggle {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 2px solid #000;
+  background-color: #FAFAF8;
+  color: #1f3a5f;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
 #langToggle:hover,
 #darkModeToggle:hover {
   background-color: #D6B98C;
@@ -82,20 +105,19 @@ a {
 /* ======================
    Content
 ====================== */
-h1, h2, h3, h4, h5, h6,
-p, li, label, span {
-  color: #1E1E1E;
-}
-
 .hero {
   padding: 4rem 0;
 }
 
+.hero h1 {
+  font-size: 2.5rem;
+}
+
 .service-card {
   background: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
   border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -103,10 +125,10 @@ p, li, label, span {
    Forms
 ====================== */
 input, textarea {
+  width: 100%;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #d1d5db;
-  color: #1E1E1E;
 }
 
 button.button {
@@ -115,41 +137,59 @@ button.button {
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   border: none;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 button.button:hover {
-  background-color: #C4A170;
+  background-color: #c2a36f;
+  transform: translateY(1px);
 }
 
 /* ======================
    Footer
 ====================== */
 footer {
-  border-top: 1px solid #e5e7eb;
-  padding: 2rem 0;
   text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid #e5e7eb;
 }
 
 /* ======================
-   Mobile (SAFE)
+   Mobile Fix (SAFE)
 ====================== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
   .header-nav ul {
     flex-direction: column;
-    gap: 0.5rem;
+    width: 100%;
   }
 
-  .header-nav ul li a,
+  .header-nav ul li a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-buttons {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
   #langToggle,
   #darkModeToggle {
-    width: 100%;
+    width: 48%;
   }
 }
 
 /* ======================
-   DARK MODE (FIXED)
+   Dark Mode (MANUAL ONLY)
 ====================== */
 body.manual-dark {
   background-color: #1F3A3D;
@@ -158,27 +198,13 @@ body.manual-dark {
 
 body.manual-dark .site-header {
   background-color: #1F3A3D;
-  border-bottom-color: #2b5559;
+  border-bottom-color: #2f4f52;
 }
 
-body.manual-dark h1,
-body.manual-dark h2,
-body.manual-dark h3,
-body.manual-dark p,
-body.manual-dark li,
-body.manual-dark label {
-  color: #FAFAF8;
-}
-
-body.manual-dark .service-card {
+body.manual-dark .service-card,
+body.manual-dark footer {
   background-color: #1F3A3D;
-  border-color: #2b5559;
-}
-
-body.manual-dark input,
-body.manual-dark textarea {
-  background-color: #FAFAF8;
-  color: #1E1E1E;
+  border-color: #2f4f52;
 }
 
 body.manual-dark .header-nav ul li a,
@@ -195,8 +221,6 @@ body.manual-dark button.button:hover {
   background-color: #D6B98C;
   color: #fff;
 }
-
-
 
 
 
