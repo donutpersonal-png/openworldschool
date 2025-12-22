@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
 <header class="site-header">
   <a href="index.html" class="logo-link">
     <img src="images/logo.png" alt="Open World School Logo" id="logo">
   </a>
 
-  <!-- Menu -->
   <nav class="header-nav">
     <ul id="navMenu">
       <li><a href="index.html" data-en="Home" data-ru="Главная">Home</a></li>
@@ -23,43 +23,65 @@
     </ul>
   </nav>
 
-  <!-- Language & Dark Mode Buttons -->
   <div class="header-buttons">
-    <button id="langToggle" data-en="EN/RU" data-ru="АНГ/РУС">EN/RU</button>
-    <button id="darkModeToggle" data-en="Dark Mode" data-ru="Тёмный режим">Dark Mode</button>
+    <button id="langToggle">EN / RU</button>
+    <button id="darkModeToggle">Dark Mode</button>
   </div>
 </header>
 
 <section class="container">
   <h1 data-en="Contact Us" data-ru="Связаться с нами">Contact Us</h1>
 
-  <p data-en="If you are 18 or older, please include a brief description of your current English level and your learning goals. Parents are also welcome to contact us at any time and ask as many questions as needed; we are happy to provide detailed guidance to ensure the best learning experience."
-     data-ru="Если вам 18 лет или больше, пожалуйста, укажите краткое описание вашего текущего уровня английского языка и ваши цели обучения. Родители также могут связаться с нами в любое время и задать столько вопросов, сколько необходимо; мы рады предоставить подробные рекомендации для обеспечения наилучшего учебного опыта.">
+  <p
+    data-en="Please tell us your current English level and what outcome you would like to achieve. If you are over 18, you are welcome to contact us directly. Parents are encouraged to email us with any questions they may have. We aim to respond promptly."
+    data-ru="Пожалуйста, укажите ваш текущий уровень английского языка и желаемый результат обучения. Если вам больше 18 лет, вы можете связаться с нами напрямую. Родители могут написать нам и задать любые интересующие вопросы.">
+    Please tell us your current English level and what outcome you would like to achieve. If you are over 18, you are welcome to contact us directly. Parents are encouraged to email us with any questions they may have. We aim to respond promptly.
   </p>
 
-  <form onsubmit="event.preventDefault(); alert('Form submitted');">
-    <label data-en="Name" data-ru="Имя">Name</label><br />
-    <input type="text" required style="width:100%; margin-bottom:1rem;" /><br />
+  <!-- NETLIFY FORM -->
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <!-- Required hidden input -->
+    <input type="hidden" name="form-name" value="contact">
 
-    <label data-en="Email" data-ru="Электронная почта">Email</label><br />
-    <input type="email" required style="width:100%; margin-bottom:1rem;" /><br />
+    <!-- Honeypot (spam protection) -->
+    <p style="display:none;">
+      <label>Don’t fill this out: <input name="bot-field"></label>
+    </p>
 
-    <label data-en="Message" data-ru="Сообщение">Message</label><br />
-    <textarea required style="width:100%; margin-bottom:1rem;"></textarea><br />
+    <label data-en="Name" data-ru="Имя">Name</label><br>
+    <input type="text" name="name" required style="width:100%; margin-bottom:1rem;"><br>
 
-    <button type="submit" class="button" data-en="Send Message" data-ru="Отправить">Send Message</button>
+    <label data-en="Email" data-ru="Электронная почта">Email</label><br>
+    <input type="email" name="email" required style="width:100%; margin-bottom:1rem;"><br>
+
+    <label data-en="Message" data-ru="Сообщение">Message</label><br>
+    <textarea name="message" required style="width:100%; margin-bottom:1rem;"></textarea><br>
+
+    <button type="submit" class="button" data-en="Send Message" data-ru="Отправить">
+      Send Message
+    </button>
   </form>
 </section>
 
 <footer class="container">
-  <span data-en="© " data-ru="© "></span><span id="year"></span> 
-  <span data-en="Open World School" data-ru="Open World School">Open World School</span>
+  © <span id="year"></span> Open World School
 </footer>
 
 <script src="js/lang.js"></script>
 <script src="js/darkmode.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
+
 
 
 
