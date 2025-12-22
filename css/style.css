@@ -61,13 +61,13 @@ ul {
 ====================== */
 .header-nav ul li a {
   text-decoration: none;
-  color: #1f3a5f;
+  color: #1f3a5f;          
   font-weight: bold;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #000;
-  border-radius: 6px;
-  line-height: 1.5;
+  font-size: 1rem;         
+  padding: 0.5rem 1rem;    
+  border: 2px solid #000;  
+  border-radius: 6px;      
+  line-height: 1.5;        
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -79,10 +79,10 @@ ul {
 .header-nav ul li a:hover,
 .header-nav ul li a:focus,
 .header-nav ul li a:active {
-  color: #fff;
-  background-color: #D6B98C;
-  border-color: #000;
-  transform: translateY(1px);
+  color: #fff;             
+  background-color: #D6B98C; 
+  border-color: #000;      
+  transform: translateY(1px); /* subtle press effect */
 }
 
 /* ======================
@@ -93,8 +93,8 @@ ul {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   border: 2px solid #000;
-  background: #FAFAF8;
-  color: #1f3a5f;
+  background: #FAFAF8; /* same as menu default */
+  color: #1f3a5f;      /* same as menu default */
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
@@ -102,7 +102,7 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease; /* smooth hover/press */
   margin-left: 0.5rem;
 }
 
@@ -177,8 +177,9 @@ form button.button {
 form button.button:hover,
 form button.button:focus,
 form button.button:active {
-  background-color: #1f3a5f;
-  color: #fff;
+  background-color: #fff;
+  color: #D6B98C;
+  border: 2px solid #000;
   transform: translateY(1px);
 }
 
@@ -206,59 +207,106 @@ footer {
     gap: 10px;
   }
 
-  .header-nav ul li a,
   #darkModeToggle,
   #langToggle {
-    width: 100%;
-    box-sizing: border-box;
-    margin-left: 0;
+    margin-left: 0; /* stack nicely on mobile */
     margin-top: 0.5rem;
+  }
+
+  .header-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
 /* ======================
-   Dark Mode (manual & system)
+   Manual Dark Mode
 ====================== */
-body.manual-dark,
+body.manual-dark {
+  background-color: #1F3A3D;
+  color: #1E1E1E;
+}
+
+body.manual-dark .site-header {
+  background-color: #1F3A3D;
+  border-bottom-color: #333;
+}
+
+body.manual-dark .service-card,
+body.manual-dark .hero,
+body.manual-dark footer {
+  background-color: #1F3A3D;
+  color: #1E1E1E;
+  border-color: #333;
+}
+
+body.manual-dark a {
+  color: #9ecbff;
+}
+
+body.manual-dark #darkModeToggle,
+body.manual-dark #langToggle {
+  background-color: #FAFAF8;
+  color: #1f3a5f;
+}
+
+body.manual-dark .header-nav ul li a:hover,
+body.manual-dark .header-nav ul li a:focus,
+body.manual-dark .header-nav ul li a:active,
+body.manual-dark #darkModeToggle:hover,
+body.manual-dark #darkModeToggle:focus,
+body.manual-dark #darkModeToggle:active,
+body.manual-dark #langToggle:hover,
+body.manual-dark #langToggle:focus,
+body.manual-dark #langToggle:active {
+  background-color: #D6B98C;
+  color: #fff;
+  border-color: #000;
+  transform: translateY(1px);
+}
+
+/* ======================
+   System Dark Mode (if no manual dark)
+====================== */
 @media (prefers-color-scheme: dark) {
-  body {
+  body:not(.manual-dark) {
     background-color: #1F3A3D;
     color: #1E1E1E;
   }
 
-  .site-header {
+  body:not(.manual-dark) .site-header {
     background-color: #1F3A3D;
     border-bottom-color: #333;
   }
 
-  .service-card,
-  .hero,
-  footer {
+  body:not(.manual-dark) .service-card,
+  body:not(.manual-dark) .hero,
+  body:not(.manual-dark) footer {
     background-color: #1F3A3D;
     color: #1E1E1E;
     border-color: #333;
   }
 
-  a {
-    color: #9ecbff; 
+  body:not(.manual-dark) a {
+    color: #9ecbff;
   }
 
-  #darkModeToggle,
-  #langToggle {
+  body:not(.manual-dark) #darkModeToggle,
+  body:not(.manual-dark) #langToggle {
     background-color: #FAFAF8;
     color: #1f3a5f;
   }
 
-  /* Interactive menu in dark mode */
-  .header-nav ul li a:hover,
-  .header-nav ul li a:focus,
-  .header-nav ul li a:active,
-  #darkModeToggle:hover,
-  #darkModeToggle:focus,
-  #darkModeToggle:active,
-  #langToggle:hover,
-  #langToggle:focus,
-  #langToggle:active {
+  body:not(.manual-dark) .header-nav ul li a:hover,
+  body:not(.manual-dark) .header-nav ul li a:focus,
+  body:not(.manual-dark) .header-nav ul li a:active,
+  body:not(.manual-dark) #darkModeToggle:hover,
+  body:not(.manual-dark) #darkModeToggle:focus,
+  body:not(.manual-dark) #darkModeToggle:active,
+  body:not(.manual-dark) #langToggle:hover,
+  body:not(.manual-dark) #langToggle:focus,
+  body:not(.manual-dark) #langToggle:active {
     background-color: #D6B98C;
     color: #fff;
     border-color: #000;
@@ -266,20 +314,6 @@ body.manual-dark,
   }
 }
 
-/* ======================
-   Smooth transitions
-====================== */
-body,
-.site-header,
-.service-card,
-.hero,
-footer,
-.header-nav ul li a,
-#darkModeToggle,
-#langToggle,
-form button.button {
-  transition: all 0.3s ease;
-}
 
 
 
